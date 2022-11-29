@@ -2,7 +2,7 @@ This is a fork of NCCPack, read below for their discord.
 
 I replaced Department with Ranks.
 I also removed the random numbers in the twitter handle.
-
+Lastly I removed mer, oocr, and gooc.  made ooc global.
 To change acceptable ranks you may need to have experience with Lua.  If you need help add me on discord (jemma#0001). 
 
 
@@ -13,7 +13,7 @@ NCCPack is a FiveM resource made by KyleLee15 that allows players to change thei
 
 
 ## Installation & Usage
-1. Download the latest version of [NCCPack](https://github.com/KaraTheNeko/NCCPack/releases/tag/1.0.0)
+1. Download the latest version of [NCCPack](https://github.com/KaraTheNeko/NCCPack/releases/tag/1.0.1)
 2. Unzip the NCCPack folder and add it to your server resources folder.
 3. Add the following line into your server.cfg
    ```
