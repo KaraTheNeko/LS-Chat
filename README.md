@@ -42,23 +42,6 @@ You can contact myself or other members who are using the reource for support on
 ## Screenshots
 To view the related screenshots to NCCPack press [here](https://imgur.com/a/LFOKlgw)
 
-## Change Log
-**1.0.0** -
-Offical release of NCCPack to the public on 04/03/2021
-
-**1.0.1** - Fixed issues and bugs discoved in the 1.0.0 release
-- Added Configuration options to the script
-- Added automatically making the first letters of the last and last name capital. 
-- Fixed the problem when selected departments as they where case sensitive
-- Fixed global messages being sent when they where meant to be client sided
-
-**1.0.2**
-- Uploaded preview [screenshots](https://imgur.com/a/LFOKlgw) of the resource.
-- Fixed errors found within the /department command
-- Added /clear command
-- Added /clearname command
-- Added /cleardept command
-- Added /clearhandle command 
 
 ## Bugs
 To report bugs please go to the [NCC Discord](https://discord.gg/hUsxsuRyH6) and report any bugs you have!
