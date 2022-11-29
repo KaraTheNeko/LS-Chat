@@ -68,9 +68,8 @@ if EnableTwtCommands == true then
 			return
 		end
 		
-		local randomNumber = math.random (100, 999)
 		local serverID = source
-		local fulltwhandle = args[1]..""..randomNumber 
+		local fulltwhandle = args[1]
 				
 		TriggerClientEvent('chatMessage', source, "^*Updated Twotter Username: "..fulltwhandle)
 		customhandles[serverID] = fulltwhandle
