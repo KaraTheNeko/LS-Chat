@@ -339,60 +339,6 @@ if EnableChatCommand == true then
 		end, false)
 	end
 
-		--/mer Command
-	if EnableMerChat == true then
-		RegisterCommand('mer', function(source, args, user)
-			local name = customnames[source]
-			local dept = customdept[source]
-			local stockname = GetPlayerName(source)
-			if dept and name then
-				TriggerClientEvent("SendProximityMessageMer", -1, source, ""..dept.."‎ ‎"..name, table.concat(args, " "))
-			elseif name then
-				TriggerClientEvent("SendProximityMessageMer", -1, source, name, table.concat(args, " "))
-			elseif dept then
-				TriggerClientEvent("SendProximityMessageMer", -1, source, ""..dept.."‎ ‎"..stockname, table.concat(args, " "))
-			else
-				TriggerClientEvent("SendProximityMessageMer", -1, source, GetPlayerName(source), table.concat(args, " "))
-			end
-		end, false)
-	end
-
-	--/ooc Command
-	if EnableOOCChat == true then
-		RegisterCommand('ooc', function(source, args, user)
-			local name = customnames[source]
-			local dept = customdept[source]
-			local stockname = GetPlayerName(source)
-			if dept and name then
-				TriggerClientEvent("SendProximityMessagePOOC", -1, source, ""..dept.."‎ ‎"..name, table.concat(args, " "))
-			elseif name then
-				TriggerClientEvent("SendProximityMessagePOOC", -1, source, name, table.concat(args, " "))
-			elseif dept then
-				TriggerClientEvent("SendProximityMessagePOOC", -1, source, ""..dept.."‎ ‎"..stockname, table.concat(args, " "))
-			else
-				TriggerClientEvent("SendProximityMessagePOOC", -1, source, GetPlayerName(source), table.concat(args, " "))
-			end
-		end, false)
-	end
-		
-	--/oocr
-	if EnableOOCRChat == true then
-		RegisterCommand('oocr', function(source, args, user)
-			local name = customnames[source]
-			local dept = customdept[source]
-			local stockname = GetPlayerName(source)
-			if dept and name then
-				TriggerClientEvent("SendProximityMessagePOOCr", -1, source, ""..dept.."‎ ‎"..name, table.concat(args, " "))
-			elseif name then
-				TriggerClientEvent("SendProximityMessagePOOCr", -1, source, name, table.concat(args, " "))
-			elseif dept then
-				TriggerClientEvent("SendProximityMessagePOOCr", -1, source, ""..dept.."‎ ‎"..stockname, table.concat(args, " "))
-			else
-				TriggerClientEvent("SendProximityMessagePOOCr", -1, source, GetPlayerName(source), table.concat(args, " "))
-			end
-		end, false)
-	end
-
 		--/twt Command
 	if EnableTwtCommands == true then
 		RegisterCommand('twt', function(source, args, user)
@@ -405,9 +351,9 @@ if EnableChatCommand == true then
 		end, false)
 	end
 
-	--/gooc Command
-	if EnableGOOCChat == true then
-		RegisterCommand('gooc', function(source, args, user)
+	--/ooc Command
+	if EnableOOCChat == true then
+		RegisterCommand('ooc', function(source, args, user)
 			local name = customnames[source]
 			local dept = customdept[source]
 			local stockname = GetPlayerName(source)
