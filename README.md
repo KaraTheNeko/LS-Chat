@@ -1,23 +1,20 @@
-This is a fork of NCCPack, read below for their discord.
-
-I replaced Department with Ranks.
-I also removed the random numbers in the twitter handle.
-Lastly I removed mer, oocr, and gooc.  made ooc global.
-To change acceptable ranks you may need to have experience with Lua.  If you need help add me on discord (jemma#0001). 
+# LS Chat
+LS Chat is a modified version of [KyleLee15's NCCPack](https://forum.cfx.re/t/release-fivem-chat-doj-based-nccpack-fivem-chat-with-changeable-name-more-stand-a-lone/2332881?page=2) that implements more commands, compatability with [Concept Collective's CC-Chat](https://github.com/Concept-Collective/cc-chat), and more!
 
 
-# NCCPack
-NCCPack is a FiveM resource made by KyleLee15 that allows players to change their name within chat while maintaining fetures for a high quality FiveM RP chat. Please join the  [NCC Discord](https://discord.gg/hUsxsuRyH6)
-
-
-
+## Requirements
+This script requires:
+* [CC-Chat](https://github.com/Concept-Collective/cc-chat)
+* [LS-Essentials](https://github.com/KaraTheNeko/ls-essentials)
 
 ## Installation & Usage
-1. Download the latest version of [NCCPack](https://github.com/KaraTheNeko/NCCPack/releases/tag/1.0.1)
-2. Unzip the NCCPack folder and add it to your server resources folder.
-3. Add the following line into your server.cfg
+1. Download the latest version of [LS-Chat](https://github.com/KaraTheNeko/LS-Chat/releases/tag/1.0.0)
+2. Unzip the folder and add it to your server resources folder.
+3. Add the following line into your server.cfg AFTER "chat"
    ```
-   ensure NCCPack
+   ensure cc-chat
+   ensure ls-essentials
+   ensure LS-Chat
    ```
 ## Commands
 * /name {Firstname} {Lastname} | Allows members to enter a firstname and a lastname into chat for it to automatically update in chat for them.
@@ -25,6 +22,8 @@ NCCPack is a FiveM resource made by KyleLee15 that allows players to change thei
 * /ranks {so/pd/state/fire/ems} | Lists out the acceptable ranks for /rank.  Leave blank for misc ranks.
 * /twthandle {username} | Allows members to create an custom Twotter/Twitter handle that will then be used in the command /twt.
 * /twt {message} | Allows members to send a global message to other members on the server using Twotter/Twitter **[Global]**
+* /ganontwt | Generates a random handle for /anontwt. 
+* /anontwt {message} | Allows members to send a global anonymous message to other members on the server using Twotter/Twitter **[Global]**
 * /me {message} | Allows members to send messages over chat **[Proximity]**
 * /mer {message} | Allows members to send messages in red over chat **[Proximity]**
 * /ooc {message} | Allows members to send an "Out of Character" (OOC) message **[Proximity]**
@@ -35,20 +34,3 @@ NCCPack is a FiveM resource made by KyleLee15 that allows players to change thei
 * /clearname | Allows members to reset their active name **(Client Sided)**
 * /clearrank | Allows members to reset their active rank **(Client Sided)**
 * /clearhandle | Allows members to reset their active Twotter handles **(Client Sided)**
-
-## Support
-You can contact myself or other members who are using the reource for support on my [discord](https://discord.gg/hUsxsuRyH6)
-
-## Screenshots
-To view the related screenshots to NCCPack press [here](https://imgur.com/a/LFOKlgw)
-
-
-## Bugs
-To report bugs please go to the [NCC Discord](https://discord.gg/hUsxsuRyH6) and report any bugs you have!
-* Currently there is an issue this the chat script when the server has OneSync active 
-
-
-## Coming Soon!
-* N/A
-
-If you wish to suggest anything that could be added to NCCPack please join my [Discord](https://discord.gg/hUsxsuRyH6) and utilise the suggestions channel.

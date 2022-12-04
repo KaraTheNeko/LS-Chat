@@ -54,6 +54,52 @@ if EnableTwtCommands == true then
 	end
 end
 
+if EnableTwtCommands == true then
+	-- Twotter Handle
+	local anontwt = {}
+
+	Citizen.CreateThread(function()
+		while not NetworkIsPlayerActive(PlayerId()) do
+			Citizen.Wait(0)
+		end
+		TriggerServerEvent("getanontwt")
+	end)
+
+	RegisterNetEvent("anonchange")
+	AddEventHandler("anonchange", function(names)
+
+		anontwt = twt
+
+	end)
+
+	function GetAnonTwt()
+		return anontwt
+	end
+end
+
+
+if EnableAdvertisement == true then
+	-- Ad Name Handle
+	local customads = {}
+
+	Citizen.CreateThread(function()
+		while not NetworkIsPlayerActive(PlayerId()) do
+			Citizen.Wait(0)
+		end
+		TriggerServerEvent("getcustomads")
+	end)
+
+	RegisterNetEvent("adchange")
+	AddEventHandler("adchange", function(names)
+
+		customads = ads
+
+	end)
+
+	function GetCustomAds()
+		return customads
+	end
+end
 -- Department
 if EnableRankChange == true then
 	local customdept = {}
@@ -127,6 +173,12 @@ if EnableChatSuggestions == true then
 			})
 		end
 
+		if EnableDwChat == true then
+			TriggerEvent('chat:addSuggestion', '/anontwt', 'Send a anonymous tweet in game. (Global Chat)', {
+				{ name="Message", help="Anonymous Message."}
+			})
+		end
+
 		if EnableClearCommand == true then
 			TriggerEvent('chat:addSuggestion', '/clear', 'Clears all messages in your chat. (Client Sided)')
 		end
@@ -139,10 +191,13 @@ if EnableStandChat == true then
 	AddEventHandler('SendProximityMessage', function(id, name, message)
 	  local myID = PlayerId()
 	  local pID = GetPlayerFromServerId(id)
+	  local distance = GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(myID)), GetEntityCoords(GetPlayerPed(pID)), true)
 	  if pID == myID then
 		TriggerEvent('chatMessage', "^r" .. name .. " (#"..id..")", {128, 128, 128}, "^r " .. message)
-	  elseif GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(myID)), GetEntityCoords(GetPlayerPed(pID)), true) < 19.999 then
+		TriggerServerEvent("discord", name.." (ID: "..id..")", message)
+	  elseif distance < 19.999 and distance > 0 then
 		TriggerEvent('chatMessage', "^r" .. name .. " (#"..id..")", {128, 128, 128}, "^r " .. message)
+		TriggerServerEvent("discord", name.." (ID: "..id..")", message)
 	  end
 	end)
 end
@@ -153,9 +208,10 @@ if EnableMeChat == true then
 	AddEventHandler('SendProximityMessageMe', function(id, name, message)
 	  local myID = PlayerId()
 	  local pID = GetPlayerFromServerId(id)
+	  local distance = GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(myID)), GetEntityCoords(GetPlayerPed(pID)), true)
 	  if pID == myID then
 		TriggerEvent('chatMessage', "", {255, 0, 0}, " ^3 > ^7 " .. name .." (#"..id.."): ".."^r " .. message)
-	  elseif GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(myID)), GetEntityCoords(GetPlayerPed(pID)), true) < 19.999 then
+	  elseif distance < 19.999 and distance > 0 then
 		TriggerEvent('chatMessage', "", {255, 0, 0}, " ^3 > ^7 " .. name .." (#"..id.."): ".."^r " .. message)
 	  end
 	end)
