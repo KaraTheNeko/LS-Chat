@@ -10,11 +10,15 @@ This script requires:
 ## Installation & Usage
 1. Download the latest version of [LS-Chat](https://github.com/KaraTheNeko/LS-Chat/releases/tag/1.0.0)
 2. Unzip the folder and add it to your server resources folder.
-3. Add the following line into your server.cfg AFTER "chat"
+3. Add the following lines into your server.cfg AFTER "chat"
    ```
    ensure cc-chat
    ensure ls-essentials
    ensure LS-Chat
+   ```
+4. Add the follwoing to either your server.cfg or permissions.cfg
+   ```
+   add_ace group.admin ls-essentials.*
    ```
 ## Commands
 * /name {Firstname} {Lastname} | Allows members to enter a firstname and a lastname into chat for it to automatically update in chat for them.
