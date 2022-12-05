@@ -301,7 +301,7 @@ if EnableRankChange == true then
 		
 		
 		else
-			TriggerClientEvent('chatMessage', source, "^*[Invalid Department] Please choose from the following: SO, PD, HP, Civ or FD.")
+			TriggerClientEvent('chatMessage', source,"^1^*Invalid Rank, do /ranks <department> to see acceptable ranks.")
 			return
 		end
 		
